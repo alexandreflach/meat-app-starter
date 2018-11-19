@@ -142,6 +142,12 @@ Dependências dos pacotes que devem ficar em package.json:
   }
 ```
 
+## Build modificando o base-href para Deploys em subdiretórios
+
+Exemplo abaixo está no subdiretório chamado de 'meat'
+
+ng build --prod --bh=/meat/
+
 ## Créditos
 
 Todas as imagens usadas na aplicação são pertencentes a freepik.com
