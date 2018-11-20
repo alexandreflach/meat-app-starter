@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Restaurant } from './restaurant.model'
-import {trigger, state, style, transition, animate} from '@angular/animations'
+import { trigger, state, style, transition, animate} from '@angular/animations'
 
 @Component({
   selector: 'mt-restaurant',
