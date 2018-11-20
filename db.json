@@ -457,6 +457,30 @@
         }
       ],
       "id": 5
+    },
+    {
+      "name": "Catiana Correa Flach",
+      "email": "alexandre@gmail.com",
+      "emailConfirmation": "alexandre@gmail.com",
+      "address": "15 Summit Drive",
+      "number": "123",
+      "optionalAddress": "",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "capp"
+        },
+        {
+          "quantity": 1,
+          "menuId": "espreso"
+        },
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        }
+      ],
+      "id": 6
     }
   ]
 }
