@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators, AbstractControl, FormControl } from '@angular/forms'
 import { RadioOption } from 'app/shared/radio/radio-option.model';
 import { OrderService } from './order.service';
 import { CartItem } from 'app/restaurant-detail/shopping-cart/cart-item.model';
@@ -34,15 +34,16 @@ export class OrderComponent implements OnInit {
     private formbuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.orderForm = this.formbuilder.group({
-      name: this.formbuilder.control('', [Validators.required, Validators.minLength(5)]),
+    this.orderForm = new FormGroup({
+      name:  new FormControl('', {
+        validators: [Validators.required, Validators.minLength(5)]}),
       email: this.formbuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       emailConfirmation: this.formbuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       address: this.formbuilder.control('', [Validators.required, Validators.minLength(5)]),
       number: this.formbuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
       optionalAddress: this.formbuilder.control(''),
       paymentOption: this.formbuilder.control('', [Validators.required])
-    }, {validator: OrderComponent.equaltsTo})
+    }, {validators: [OrderComponent.equaltsTo], updateOn: 'blur'})
   }
 
   static equaltsTo(group: AbstractControl) : {[key: string]:boolean}{
